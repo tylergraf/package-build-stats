@@ -204,6 +204,7 @@ const BuildUtils = {
       const assetStats = jsonStats.assets
         .filter(asset => !asset.chunkNames.includes('runtime'))
         .filter(asset => !asset.name.endsWith('LICENSE.txt'))
+        .filter(asset => asset.name.includes("bundle"))
         .map(getAssetStats)
 
       log('build result %O', assetStats)
